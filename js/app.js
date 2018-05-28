@@ -1,3 +1,8 @@
+// REMEMBER 
+//----------------------
+// The insertAdjacentElement() method inserts a given element node at a given position relative to the element it is invoked upon.
+//-----------------------
+
 (() => {
 
     const mobileWidth = 680;
@@ -11,6 +16,29 @@
             bodyOffset > 0 ? nav.classList.add('aw-nav-fixed') : nav.classList.remove('aw-nav-fixed');
         }
         
+    }
+
+    const reorderResponsiveMenu = () => {
+        const pageWidth = window.innerWidth;
+        const navContainer = document.querySelector('header nav .aw-container');
+        const navigation = document.querySelector('header nav .aw-navigation');
+        const mobileNavigation = document.querySelector('body > .aw-navigation');
+
+        if(pageWidth <= mobileWidth && navigation) {
+            document.body.insertAdjacentElement('afterbegin', navigation);
+        } else if (pageWidth > mobileWidth && mobileNavigation) {
+            navContainer.insertAdjacentElement('beforeend', mobileNavigation);
+        }
+        
+    }
+
+    const mobileMenuToggle = () => {
+        const mobileMenuToggle = document.querySelector('.aw-nav-toggle');
+        mobileMenuToggle.addEventListener('click', () => {
+            const mobileNavigation = document.querySelector('body > .aw-navigation');
+
+            mobileNavigation.classList.toggle('aw-navigation-opened');
+        });
     }
 
     const onNavItemClick = () => {
@@ -99,8 +127,15 @@
         addMenuBg();
     });
 
+    window.addEventListener('resize', () => {
+        reorderResponsiveMenu();
+    });
+
+
+    reorderResponsiveMenu();
     onNavItemClick();
     sliderTestimonial();
     onGalleryImageClick();
+    mobileMenuToggle();
 
 })();

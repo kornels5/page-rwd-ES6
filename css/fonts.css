@@ -36,6 +36,9 @@
 .icon-lab:before {
   content: "\e9aa";
 }
+.icon-menu:before {
+  content: "\e9bd";
+}
 .icon-facebook:before {
   content: "\ea90";
 }
