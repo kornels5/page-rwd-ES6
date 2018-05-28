@@ -29,6 +29,7 @@ h3 {
     width: 100%;
     text-align: center;
     font-size: 40px;
+    margin: 50px 0;
 }
 
 h3::first-letter {
@@ -165,7 +166,6 @@ header nav ul.aw-navigation li a:hover::after {
 
 #aw-about .aw-column {
     width: 48%;
-    margin-top: 50px;
     text-align: center;
 }
 
@@ -226,9 +226,159 @@ header nav ul.aw-navigation li a:hover::after {
     height: 0;
 }
 
+/* ------------ */
+/* TESTIMONIALS */
+/* ------------ */
+
+#aw-testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aw-testimonials {
+    position: relative;
+    max-width: 500px;
+}
+
+.aw-testimonials ul {
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+}
+
+.aw-testimonials ul li{
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.aw-testimonials ul li .aw-user-data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aw-testimonials ul li .aw-user-data img {
+    border-radius: 100%;
+}
+
+.aw-testimonials ul li .aw-user-name {
+    display: block;
+    margin: 15px 0;
+}
+
+.aw-testimonials ul li > p {
+    font-style: italic;
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+}
+
+.aw-testimonials .aw-arrow {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    border: solid #eee;
+    padding: 20px;
+    border-width: 0 3px 3px 0;
+    cursor: pointer;
+    -webkit-transition: border-color .3s ease;
+    transition: border-color .3s ease;
+}
+
+.aw-testimonials .aw-arrow.aw-arrow-left {
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    right: 120%;
+}
+
+.aw-testimonials .aw-arrow.aw-arrow-right {
+    -webkit-transform: rotate-(45deg);
+    transform: rotate(-45deg);
+    left: 120%;
+}
+
+.aw-testimonials .aw-arrow:hover {
+    border-color: #dca453;
+}
+
+/* ------- */
+/* CONTACT */
+/* ------- */
+
+#aw-contact {
+    background-color: #eee;
+}
+
+#aw-contact form {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#aw-contact form input:not([type="submit"]),
+#aw-contact form textarea {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: solid 1px #ccc;
+    font-size: 14px;
+    outline: none;
+}
+
+#aw-contact form textarea {
+    resize: none;
+    height: 100px;
+}
+
+#aw-contact form *::-webkit-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact form *::-moz-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact form *:-ms-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact form *:-moz-input-placeholder {
+    color: #ccc;
+    font-style: italic;
+}
+
+#aw-contact input[type="submit"] {
+    border: none;
+    margin-top: 20px;
+    font-size: 16px;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #dca352;
+    box-shadow: inset 0 -3px 0 0 #c79652;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#aw-contact input[type="submit"]:hover {
+    color: #f5f5f5;
+    box-shadow: inset 0 -3px 0 0 #a27c47;
+}
+
 /* ---------- */
 /* ANIMATIONS */
 /* ---------- */
+
 .aw-pulsate {
     -webkit-animation: pulsate 3s ease-in-out;
     -webkit-animation-iteration-count: infinite;
